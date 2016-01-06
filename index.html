@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+*
+* Copyright (C) 2014, bitmovin GmbH, All Rights Reserved
+*
+* Created on: 2015-02-06 14:00:00
+* Author:     bitmovin GmbH <dash-player@bitmovin.net>
+*
+* This source code and its use and distribution, is subject to the terms
+* and conditions of the applicable license agreement.
+*
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- bitdash player -->
+    <!-- script type="text/javascript" src="//bitdash-a.akamaihd.net/bitmovin-portal/559a56a732dd2/8419b5c574/latest/bitdash.min.js"></script -->
+    <!-- pro script type="text/javascript" src="//bitdash-a.akamaihd.net/bitmovin-portal/559a56a732dd2/a6fdba71ff/latest/bitdash.min.js"></script -->
+    <script type="text/javascript" src="//bitdash-a.akamaihd.net/bitmovin-portal/559000ce78fac/1/latest/bitdash.min.js"></script>
+    <!-- script type="text/javascript" src="//bitdash-a.akamaihd.net/bitmovin-portal/559a56a732dd2/a6fdba71ff/latest/bitdash.min.js"></script -->
+    <!-- script type="text/javascript" src="//bitdash-a.akamaihd.net/bitmovin-portal/559a56a732dd2/6c93fc37cc/latest/bitdash.min.js"></script -->
+    <!-- script type="text/javascript" src="bitdash.min.js"></script -->
+
+  </head>
+  <body>
+    <center>
+      <h1>Demo Page for jznight.synology.me</h1>
+      <div id="wrapper">
+        <div id="player"></div>
+      </div>
+    </center>
+    <script type="text/javascript">
+      var conf = {
+        //key:       "b830345db96662f2bdc9ea1801371e1b",
+        //key:       "0fddcf12fafa2a9088152d179bc0309e",
+        //key:       "fe4bd56906bbec8c5b6a7b97ef119f44",
+        key:         "f5b140e118575295494bec8ba3ab9456",
+        //key:       "0fddcf12fafa2a9088152d179bc0309e",
+        source:    {
+          mpd:       "sample/sample_dash.mpd?md5=Dfn0XjvoIKVEZVwDiKNeYw&exires=1441186886&test=1111",
+          hls:       'sample/sample.m3u8?md5=Dfn0XjvoIKVEZVwDiKNeYw&exires=1441186886',
+          poster:    "sample.png"
+        },
+        playback: {
+          autoplay:  false,
+          muted:     false
+        },
+        style: {
+          width: '600px',
+          height: '250px'
+        },
+        events: {
+          onError: function(data) { 
+            console.error("bitdash error: " + data.code + ": " + data.message);
+          },
+          onReady: function(obj)  { 
+            console.log(this.getVersion() + ' onReady: ', obj);
+          }
+        }
+      };
+
+      var player = bitdash("player").setup(conf);
+    </script>
+  </body>
+</html>
