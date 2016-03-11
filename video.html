@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+*
+* Copyright (C) 2014, bitmovin GmbH, All Rights Reserved
+*
+* Created on: 2015-02-06 14:00:00
+* Author:     bitmovin GmbH <dash-player@bitmovin.net>
+*
+* This source code and its use and distribution, is subject to the terms
+* and conditions of the applicable license agreement.
+*
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="http://vjs.zencdn.net/5.8.0/video-js.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="play.png" data-setup="{}">
+      <source src="http://sss.av.ckcdn.com/static/oihcNK8R/oihcNK8R.m3u8" type='video/mp4'>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+      </p>
+    </video>
+
+    <script src="assets/js/videojs.hls.min.js"></script>
+    <script src="http://vjs.zencdn.net/5.8.0/video.js"></script>
+    <script>
+        var player = videojs('my-video');
+        player.play();
+    </script>
+  </body>
+</html>
